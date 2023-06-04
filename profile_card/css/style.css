@@ -6,17 +6,24 @@
 ul, ol{list-style: none;}
 a{text-decoration: none;}
 
-.wrap{width: 340px; padding: 30px; background: #fff; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 10px; box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);}
-.wrap .menu::after{content: ""; display: block; clear: both;}
+body{width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center;}
+
+/* float */
+/* .wrap{width: 340px; padding: 30px; background: #fff; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 10px; box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);} */
+
+/* flex */
+.wrap{width: 340px; padding: 30px; background: #fff;  border-radius: 10px; box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);}
+.wrap .menu{display: flex; justify-content: space-between;}
+/* .wrap .menu::after{content: ""; display: block; clear: both;} */
 .wrap .menu a{font-size: 20px; color: #666;}
-.wrap .menu a:nth-child(1){float: left;}
-.wrap .menu a:nth-child(2){float: right;}
+/* .wrap .menu a:nth-child(1){float: left;}
+.wrap .menu a:nth-child(2){float: right;} */
 .wrap .profile{width: 100%; text-align: center; }
 .wrap .profile img{width: 200px; height: auto; border-radius: 50%; box-shadow: 5px 15px 30px rgba(144, 223, 255, 0.8); margin-bottom: 20px;}
 .wrap .profile h1{font: bold 22px/1 "arial"; color: #555; margin-bottom: 5px;}
 .wrap .profile p{font: 12px/1 "arial"; color: #bbb; margin-bottom: 30px;}
 .wrap .profile .btnView{display: block; width: 180px; height: 32px; margin: 0 auto 20px; background: linear-gradient(45deg, aqua, rgba(91, 208, 255)); box-shadow: 5px 10px 20px rgba(0, 255, 255, 0.5);
-font: bold 14px/32px "arial"; color: #fff; border-radius: 16px; text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.6);}
+font: bold 14px/1 "arial"; color: #fff; border-radius: 16px; text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.6); display: flex; align-items: center; justify-content: center;}
 
 .contact{margin-bottom: 25px; }
 .contact li{width: 100%; padding: 10px 0; border-bottom: 1px solid #eee;}
@@ -24,7 +31,7 @@ font: bold 14px/32px "arial"; color: #fff; border-radius: 16px; text-shadow: 0px
 .contact li i{width: 20%; text-align: center; color: #555; font-size: 15px; text-shadow: 2px 2px 2px #ddd;}
 .contact li span{font: 11px/1 "orbitron"; letter-spacing: 1px;}
 
-.others{text-align: center; font-size: 0px; margin-bottom: 20px;}
+.others{display: flex; justify-content: center; font-size: 0px; margin-bottom: 20px;}
 .others a{display: inline-block; width: 30px; height: 30px; background: gray; border-radius: 50%; margin: 0px 10px; opacity: 0.3;}
 .others a.on{opacity: 1;}
 .others a:nth-of-type(1){background: rgb(0, 255, 255); box-shadow: 5px 5px 10px rgba(0, 255, 255, 0.5);}
