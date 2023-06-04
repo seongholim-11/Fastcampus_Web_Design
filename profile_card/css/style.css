@@ -47,7 +47,6 @@ body.member3{background: rgb(246, 255, 224);}
 body.member3 .wrap .profile img{box-shadow: 5px 15px 30px rgba(244, 255, 144, 0.8);}
 body.member3 .wrap .profile .btnView{background: linear-gradient(45deg, rgb(208, 255, 0), rgb(255, 244, 91)); box-shadow: 5px 10px 20px rgba(242, 255, 0, 0.5);}
 
-
 /* member4 custom */
 body.member4{background: rgb(255, 224, 224);}
 body.member4 .wrap .profile img{box-shadow: 5px 15px 30px rgba(255, 170, 144, 0.8);}
