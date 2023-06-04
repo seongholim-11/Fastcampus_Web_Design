@@ -1,6 +1,54 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
 /* reset CSS */
 *{margin: 0; padding: 0; box-sizing: border-box;}
 ul, ol{list-style: none;}
 a{text-decoration: none;}
+
+.wrap{width: 340px; padding: 30px; background: #fff; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 10px; box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);}
+.wrap .menu::after{content: ""; display: block; clear: both;}
+.wrap .menu a{font-size: 20px; color: #666;}
+.wrap .menu a:nth-child(1){float: left;}
+.wrap .menu a:nth-child(2){float: right;}
+.wrap .profile{width: 100%; text-align: center; }
+.wrap .profile img{width: 200px; height: auto; border-radius: 50%; box-shadow: 5px 15px 30px rgba(144, 223, 255, 0.8); margin-bottom: 20px;}
+.wrap .profile h1{font: bold 22px/1 "arial"; color: #555; margin-bottom: 5px;}
+.wrap .profile p{font: 12px/1 "arial"; color: #bbb; margin-bottom: 30px;}
+.wrap .profile .btnView{display: block; width: 180px; height: 32px; margin: 0 auto 20px; background: linear-gradient(45deg, aqua, rgba(91, 208, 255)); box-shadow: 5px 10px 20px rgba(0, 255, 255, 0.5);
+font: bold 14px/32px "arial"; color: #fff; border-radius: 16px; text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.6);}
+
+.contact{margin-bottom: 25px; }
+.contact li{width: 100%; padding: 10px 0; border-bottom: 1px solid #eee;}
+.contact li:last-child{border-bottom: none;}
+.contact li i{width: 20%; text-align: center; color: #555; font-size: 15px; text-shadow: 2px 2px 2px #ddd;}
+.contact li span{font: 11px/1 "orbitron"; letter-spacing: 1px;}
+
+.others{text-align: center; font-size: 0px; margin-bottom: 20px;}
+.others a{display: inline-block; width: 30px; height: 30px; background: gray; border-radius: 50%; margin: 0px 10px; opacity: 0.3;}
+.others a.on{opacity: 1;}
+.others a:nth-of-type(1){background: rgb(0, 255, 255); box-shadow: 5px 5px 10px rgba(0, 255, 255, 0.5);}
+.others a:nth-of-type(2){background: rgb(144, 238, 222); box-shadow: 5px 5px 10px rgb(144, 238, 222, 0.5);}
+.others a:nth-of-type(3){background: rgb(255, 105, 180); box-shadow: 5px 5px 10px rgb(255, 105, 180, 0.5);}
+.others a:nth-of-type(4){background: rgb(118, 24, 206); box-shadow: 5px 5px 10px rgba(118, 24, 206, 0.5);}
+
+/* member1 custom */
+body.member1{background: lightcyan;}
+body.member1 .wrap .profile img{box-shadow: 5px 15px 30px rgba(144, 223, 255, 0.8);}
+body.member1 .wrap .profile .btnView{background: linear-gradient(45deg, aqua, rgba(91, 208, 255)); box-shadow: 5px 10px 20px rgba(0, 255, 255, 0.5);}
+
+/* member2 custom */
+body.member2{background: rgb(224, 255, 238);}
+body.member2 .wrap .profile img{box-shadow: 5px 15px 30px rgba(144, 255, 207, 0.8);}
+body.member2 .wrap .profile .btnView{background: linear-gradient(45deg, rgb(0, 255, 166), rgb(91, 255, 135)); box-shadow: 5px 10px 20px rgba(47, 255, 0, 0.5);}
+
+/* member3 custom */
+body.member3{background: rgb(246, 255, 224);}
+body.member3 .wrap .profile img{box-shadow: 5px 15px 30px rgba(244, 255, 144, 0.8);}
+body.member3 .wrap .profile .btnView{background: linear-gradient(45deg, rgb(208, 255, 0), rgb(255, 244, 91)); box-shadow: 5px 10px 20px rgba(242, 255, 0, 0.5);}
+
+
+/* member4 custom */
+body.member4{background: rgb(255, 224, 224);}
+body.member4 .wrap .profile img{box-shadow: 5px 15px 30px rgba(255, 170, 144, 0.8);}
+body.member4 .wrap .profile .btnView{background: linear-gradient(45deg, rgb(255, 51, 0), rgb(255, 97, 91)); box-shadow: 5px 10px 20px rgba(255, 38, 0, 0.5);}
