@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>   
+    <script src="https://kit.fontawesome.com/485509e1ae.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>   
+    <!-- 
+        1. ID는 중요한 요소에 사용, 페이지 내에서 이동가능
+        2. gnb = Global Navigation Bar
+        3. lnb = Local Navigation Bar
+        4. 탭 들여쓰기, 하단 오른쪽 버튼을 통해 변경 가능
+        5. flex는 요소를 인라인 요소로 바꾸는 원리
+        6. 화려한 폰트는 font-weight를 normal로 해야 디자인이 깨지지 않음
+        7. 반응형 웹을 만들 때는 모바일 메뉴와 웹 메뉴를 분류하여 제작, 모바일에서 웹 메뉴가 작동하지 않는 경우가 많아서
+     -->
+   <header>
+    <h1>DCODELAB</h1>
+    <ul id="gnb">
+        <li><a href="#">COMPANY</a></li>
+        <li><a href="#">BRAND</a></li>
+        <li><a href="#">GALLERY</a></li>
+        <li><a href="#">COMMUNITY</a></li>
+        <li><a href="#">NEWS</a></li>
+        <li><a href="#">LOCATION</a></li>
+    </ul>
+
+    <ul class="sns">
+        <li><a href="#"><i class="fas fa-search"></i></a></li>
+        <li><a href="#"><i class="far fa-envelope"></i></a></li>
+        <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+    </ul>
+
+    <a href="#" class="btnMenu">
+        <i class="fas fa-bars"></i>
+    </a>
+   </header>
+
+   <figure>
+    <video src="./img/video.mp4" autoplay muted loop></video>
+
+    <article class="txt">
+        <p>UI/UX<br>DEVELOPMENT</p>
+        <ul>
+            <li>
+                <i class="fab fa-playstation"></i>
+                <strong>Play This</strong>
+            </li>
+            <li>
+                <i class="fas fa-heart"></i>
+                <strong>Favorit Item</strong>
+            </li>
+        </ul>
+    </article>
+   </figure>
+
+   <footer>
+    2021 DCODELAB &copy; ALL RIGHTS RESERVED
+   </footer>
+</body>
+</html>
