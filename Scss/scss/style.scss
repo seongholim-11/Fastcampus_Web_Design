@@ -1,0 +1,137 @@
+@charset "UTF-8";
+// 한 줄 주석
+/* 여러 줄 주석 */
+
+// 부분 파일 불러오기
+@import "reset";
+@import "mixin";
+
+// $변수명: 내용
+$bgBody: #eee;
+$bgItem: #111;
+// $colorH2: #333;
+// $colorP: #777;
+// $bgButton: gray;
+// $interval: 0.1s;
+// $bgs: (hotpink, aqua, orange, lightgreen);
+
+body {
+  background: $bgBody;
+}
+
+.wrap {
+  width: 100%;
+  border: 2px solid #bbb;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  // 원근감
+  perspective: 600px;
+
+  .item {
+    width: 300px;
+    padding: 30px;
+    background: $bgItem;
+    margin: 50px;
+    border-radius: 20px;
+    box-sizing: 5px 5px 20px rgba(0, 0, 0, 0.1);
+    // transition: 0.5s;
+    // transform: translateY(100px) rotateY(180deg);
+    // opacity: 0;
+
+    h2 {
+      font-size: 30px;
+      font-family: "arial";
+      @if $bgItem == #fff{color: #333;}
+      @else{color: #fff}
+    //   color: #333;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.3;
+      font-family: "arial";
+      @if $bgItem == #fff{color: #333;}
+      @else{color: #fff}
+    //   color: #333;
+      margin-bottom: 20px;
+    }
+
+    a{
+        font-size: 20px;
+    }
+
+    &:hover{
+        background: #111;
+
+        h2, p, a{color: #fff;}
+    }
+
+    // through 다음 수를 포함
+    // to 그 전 수까지
+ 
+
+    // @each $el in $bgs {
+    //   $num: index($bgs, $el);
+    //   &:nth-of-type(#{$num}) {
+    //     transition-delay: $interval * $num;
+    //     a {
+    //       @include button($bg: $el);
+    //     }
+    //   }
+    // }
+
+    /* &:nth-of-type(1) {
+      a {
+        @include button($bg: hotpink);
+      }
+    }
+
+    &:nth-of-type(2) {
+      a {
+        @include button($bg: aqua);
+      }
+    }
+
+    &:nth-of-type(3) {
+      a {
+        @include button($bg: orange);
+      }
+    }
+
+    &:nth-of-type(4) {
+      a {
+        @include button($bg: yellow);
+      }
+    } */
+
+    /*     
+    // mixin 호출
+    a {
+        @include button(150px)
+    } */
+
+    // 호버시 모션처리
+    // &:hover {
+    //   background: aqua;
+
+    //   h2 {
+    //     color: #fff;
+    //   }
+    //   p {
+    //     color: #fff;
+    //   }
+    //   a {
+    //     background: yellow;
+    //   }
+    // }
+  }
+
+//   &:hover {
+//     .item {
+//       transform: translateY(0px) rotateY(0deg);
+//       opacity: 1;
+//     }
+//   }
+}

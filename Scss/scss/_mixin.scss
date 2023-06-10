@@ -1,0 +1,15 @@
+// mixin 선언
+// $wid:100px => 기본값 설정
+@mixin button($wid:100px, $bg:gray) {
+  display: block;
+  width: $wid;
+  height: 35px;
+  border-radius: 20px;
+  background: $bg;
+  font-style: 12px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
