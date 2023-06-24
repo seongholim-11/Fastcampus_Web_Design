@@ -5,9 +5,179 @@
 body{background: #000; font: 17px/1.4 "orbitron"; letter-spacing: 1px; color: #ddd;}
 
 // perspective: 원근감
-.wrap{width: 100%; height: 100vh; overflow: hidden; perspective: 1300px; position: relative;
+.wrap{width: 100%; height: 100vh; overflow: hidden;position: relative;  perspective: 1300px; 
     > video{width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0px; left: 0px; opacity: 0.5;}
-    #circle{width: 600px; height: 800px; position: absolute; top: 50%; left: 50%; margin-left: -300px; margin-top: -400px; border: 1px solid aqua;
-        article{width: 100%; height: 100%; position: absolute; top:0px; left: 0px; background: rgba(255,255,255,0.4);}
+    
+    // 지름 * 3.14 = 원의 둘레
+    // 원의 둘레 / 3.14 = 지름
+    // 600 * 8 = 4800 , 반지름 = 2400
+    // 2400 / 3.14 = 764px (translateZ)
+    #circle{width: 600px; height: 800px; position: absolute; top: 50%; left: 50%; margin-left: -300px; margin-top: -400px;animation: ani linear 30s infinite; transform-style: preserve-3d;
+        article{width: 100%; height: 100%; position: absolute; top:0px; left: 0px;  display: block; backface-visibility: hidden;
+            h1{position: absolute; top: 0px; left: 0px; font-size: 30px; color: lightcyan; letter-spacing: 2px; text-shadow: 0px 0px 10px aqua; transition: all 0.5s; opacity: 0;
+            }
+            &:hover{
+                h1{top: -60px; opacity: 1;}
+            }
+            .inner{width: 100%; height: 100%;
+                > div{width: 100%; height: 100%; border: 1px solid rgba(255,255,255,0.5); box-sizing: border-box; padding: 50px; position: relative; overflow: hidden; cursor: pointer; opacity: 0.7; background: rgba(255,255,255,0.2); transition: all 0.5s;
+                &:hover{opacity: 1; transform: scale(1.03);}
+                }
+            }
+            // 첫번째 article
+            &.face1{display: block; transform: rotateY(0deg) translateZ(-764px);
+                .inner{
+                    div{width: 290px; height: 254px; float: left; margin-bottom: 20px; text-align: center;
+                    &:nth-child(odd){margin-right: 20px; }
+                    // 그림자를 밝게 주면 형광등처럼 빛나는 효과
+                    i{color: lightcyan; font-size: 100px; opacity: 0.7; transition: all 0.5s;}
+                    h2{margin-top: 20px; letter-spacing: 2px; transition: all 0.5s; color: lightcyan;}
+                    :hover{
+                        i{text-shadow: 0px 0px 10px aqua; transform: scale(1.2); opacity: 1; }
+                        h2{text-shadow: 0px 0px 10px aqua; transform: scale(1.2);}
+                    }
+                }
+                }
+            }
+            // 두번째 article
+            &.face2{
+                display: block; transform: rotateY(45deg) translateZ(-764px);
+                .inner{
+                    div{
+                        img{width: 100%; margin-top: 30px; margin-bottom: 40px;}
+                        h2{font: bold 24px/1 "orbitron"; color: lightcyan; transition: all 0.5s;}
+                        h3{font: bold 20px/1 "orbitron"; color: lightcyan; margin-bottom: 20px; transition: all 0.5s;}
+                        p{font: 18px/1.3 "arial"; color: #ccc;}
+
+                        &:hover{
+                            h2, h3{color: lightcyan; text-shadow: 0px 0px 10px aqua;}
+                        }
+                    }
+                }
+            }
+            // 3번째 article
+            &.face3{
+                display: block; transform: rotateY(90deg) translateZ(-764px);
+                .inner{
+                    > div{
+                        width: 100%; height: 253px; margin-bottom: 20px; 
+                        &::after{content: ""; display: block; clear: both;}
+                        .pic{width: 120px; height: 120px; overflow: hidden; border-radius: 50%; border: 1px solid #fff; float: left;
+                        img{width: 100%; height: 100%; object-fit: cover;}
+                        }
+                        .con{width: 340px; float: right; 
+                            h2{font: bold 22px/1 "orbitron"; color: #fff; margin-bottom: 20px;}
+                            p{font: 18px/1.3 "arial"; color: #ddd; margin-bottom: 30px;}
+                            span{font: 12px/1 "orbitron"; color: aqua;}
+                        }
+                    }
+                }
+            }
+            // 4번째 article
+            &.face4{
+                display: block; transform: rotateY(135deg) translateZ(-764px);
+                .inner{
+                    div{
+                        &:nth-child(1){
+                            width: 100%; height: 600px; margin-bottom: 20px;
+                            video{width: 100%; border: 1px solid #fff; margin-bottom: 30px;}
+                        }
+                        &:nth-child(2){
+                            width: 100%; height: 180px; 
+                            
+                            em{font: bold 14px/1.3 "arial"; color: aqua;}
+                        }
+                        h2{font-size: 22px; margin-bottom: 15px;}
+                        p{font-size: 16px; line-height: 1.3; font-family: Arial, Helvetica, sans-serif; color: #ddd; margin-bottom: 5px;}
+                    }
+                }
+            }
+            // 5번째 article
+            &.face5{
+                display: block; transform: rotateY(180deg) translateZ(-764px);
+                .inner{
+                    div{
+                        img{
+                            margin-bottom: 40px;
+                        }
+                        .pic{width: 100%; height: 250px; border: 1px solid #ddd; box-sizing: border-box; background: #000; margin-bottom: 70px;
+                        img{width: 100%; height: 100%; object-fit: cover;}
+                        }
+                        .reflect{position: absolute; top: 100%; right: 0; transition: 0.5s;}
+                        &:hover{
+                            .reflect{top: -60%;}
+                        }
+                    }
+                }
+            }
+            // 6번째 article
+            &.face6{
+                display: block; transform: rotateY(225deg) translateZ(-764px);
+                .inner{
+                    div{width: 100%; height: 185px; margin-bottom: 20px;
+                    &::after{display: block; content: ""; clear: both;}
+                    i{width: 22%; height: 100%; border-right: 1px solid #ddd; float: left; font-size: 50px; color: #fff; text-align: left; padding-top: 16px; box-sizing: border-box; padding-left: 5px; transition: 0.5s;}
+                    .con{width: 75%; height: 100%; padding-left: 40px; box-sizing: border-box; float: right;
+                        h2{font: bold 20px/1 "orbitron"; color: #fff; margin-bottom: 10px; letter-spacing: 1px;}
+                     transition: 0.5s;}
+                    p{font: 16px/1 "arial"; color: #ddd;}
+                    &:hover{
+                        i{transform: scale(1.2); color: lightcyan; text-shadow: 0px 0px 10px aqua;}
+                        .con h2{transform: scale(1.2); color: lightcyan; text-shadow: 0px 0px 10px aqua; transform-origin: left center;}
+                    }
+                    }
+                } 
+            }
+            // 7번째 article
+            &.face7{
+                display: block; transform: rotateY(270deg) translateZ(-764px);
+                .inner{
+                    div{
+                        div{
+                            width: 100%; height: 100%; border: 1px solid #aaa; box-sizing: border-box; position: relative; overflow: hidden;
+                            video{width: 100%; height: 100%; object-fit: cover; opacity: 0.9;}
+                            h2{position: absolute; top: 140px; left: 50px; font-size: 40px; color: #fff; text-align: left; text-shadow: 2px 2px 5px #555;}
+                            img{
+                                position: absolute;
+                                &:nth-of-type(1){bottom: 0; right: 0;}
+                                &:nth-of-type(2){width: 90%; bottom: 85px; right: -18px;}
+                            }
+                        }
+                    }
+                }
+            }
+            // 8번째 article
+            &.face8{
+                display: block; transform: rotateY(315deg) translateZ(-764px);
+                .inner{
+                    div{
+                        i{transition: 0.5s;}
+                        &:nth-of-type(1){width: 100%; height: 400px; margin-bottom: 20px;
+                            i{color: #fff; font-size: 200px; position: absolute; bottom: 60px; left: 50px; opacity: 0.9;}
+                            span{font: bold 120px/1 "orbitron"; position: absolute; bottom: 90px; right: 60px;
+                                em{font: bold normal 60px/1 "arial"; position: absolute; right: -20px; top: -20px;}
+                            }
+                        }
+                        &:nth-of-type(2), &:nth-of-type(3){width: 290px; height: 380px; margin-right: 20px; float: left; text-align: center;
+                            i{font-size: 120px; color: #fff; }
+                            h3{margin-top: 30px; margin-bottom: 14px; font: bold 20px/1 "orbitron"}
+                            p{font: 16px/1 "arial"; color: #ccc; margin-bottom: 40px;}
+                            span{font: 30px/1 "orbitron"; color: #ddd;
+                                strong{font-size: 16px; color: #ddd; position: relative; top: -16px; left: 5px;}
+                            }
+                        }
+                        &:nth-of-type(3){margin-right: 0px;}
+                        &:hover{
+                            i{color: lightcyan; transform: scale(1.1); text-shadow: 0px 0px 10px aqua;}
+                        }
+                    }
+                }
+            }
+        }
     } 
+}
+
+@keyframes ani {
+    0%{transform: rotateY(0deg);}
+    0%{transform: rotateY(360deg);}
 }
