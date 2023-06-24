@@ -4,7 +4,8 @@
 
 main{width: 100%; height: 100vh; display: flex;
    // align-content와 align-item 차이?
-   header{width: 20%; height: 100%; border: 10px solid pink; padding: 10vh 5vw; display: flex; flex-wrap: wrap; justify-content: center; align-content: space-between;
+   header{
+      width: 20%; height: 100%; padding: 10vh 5vw; display: flex; flex-wrap: wrap; justify-content: center; align-content: space-between; position: relative; z-index: 3;
       h1{display: flex; flex-wrap: wrap; justify-content: center; align-content: center; color: #fff;
          i{font-size: 5vw; margin-bottom: 10px;}
          span{font: normal 0.8vw/1 "arial"; width: 100%; text-align: center;}
@@ -14,10 +15,11 @@ main{width: 100%; height: 100vh; display: flex;
       }
    }
 
-   section{width: 80%; height: 100%; padding-top: 10vh; display: flex; 
+   section{
+      width: 80%; height: 100%; padding-top: 10vh; display: flex; position: relative; z-index: 1;
       article{
          // flex는 높이값을 주지 않으면 부모만큼 높이를 가짐
-         flex: 1; transition: 0.5s; position: relative;
+         flex: 1; transition: 0.5s; position: relative; cursor: pointer;
          &::before{
             width: 80%; height: 95%; position: absolute; top: 0; left: -100px; background: #444; content: ""; display: block; opacity: 0; transition: 1s; box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
          }
@@ -61,7 +63,8 @@ main{width: 100%; height: 100vh; display: flex;
       }
    }
 
-   nav{position: absolute; top: 4vh; right: 5vw;
+   nav{
+      position: absolute; top: 4vh; right: 5vw;
       ul{
          display: flex; 
          li{
@@ -70,6 +73,25 @@ main{width: 100%; height: 100vh; display: flex;
                font-size: 18px; color: #ddd;
             }
          }
+      }
+   }
+
+   aside{width: 100%; height: 100vh; background-color: #333; position: absolute; top: 0; left: -100%; z-index: 2; padding: 5vw; padding-left: 20%; display: flex; justify-content: space-between; opacity: 0; transition: 1s;
+      &.on{opacity: 1; left: 0;}
+      .txtBox{
+         width: 25%;
+         h2{
+            font: normal 120px/1 'alegreya sans SC'; color: #ddd; margin-bottom: 30px;
+         }
+         p{
+            font: 18px/1.2 'arial'; color: #777;
+         }
+      }
+      .vidBox{width: 72%; padding-top: 150px; 
+         video{width: 100%;}
+      }
+      .btnClose{
+         position: absolute; top: 150px; right: 5vw; font: 16px/1 'arial'; color: orange; cursor: pointer;
       }
    }
 }
