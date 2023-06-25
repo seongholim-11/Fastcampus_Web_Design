@@ -11,17 +11,71 @@
    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
    <link rel="stylesheet" href="scss/style.css">
 </head>
+<!-- 
+1. 어떠한 효과를 줄 때, 해당 태그에 바로 주기 보다는 .inner, .container 같은 태그로 한 번 더 감싼 후에 하는 것이 좋음.
+   안 그러면 ui가 깨질 가능성이 있음.
 
+ -->
 <body>
+   <h1>DCODELAB</h1>
    <main>
+      <!-- 스와이퍼 슬라이드 -->
       <section class="swiper-wrapper">
-         <article class="swiper-slide">1</article>
-         <article class="swiper-slide">2</article>
-         <article class="swiper-slide">3</article>
-         <article class="swiper-slide">4</article>
-         <article class="swiper-slide">5</article>
+         <article class="swiper-slide">
+            <div class="inner">
+               <div class="con">
+                  <img src="./img/pic1.png" alt="pic">
+                  <h2>Lorem ipsum dolor sit.</h2>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, expedita.</p>
+               </div>
+            </div>
+         </article>
+         <article class="swiper-slide">
+            <div class="inner">
+               <div class="con">
+                  <img src="./img/pic2.png" alt="pic">
+                  <h2>Lorem ipsum dolor sit.</h2>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, expedita.</p>
+               </div>
+            </div>
+         </article>
+         <article class="swiper-slide">
+            <div class="inner">
+               <div class="con">
+                  <img src="./img/pic3.png" alt="pic">
+                  <h2>Lorem ipsum dolor sit.</h2>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, expedita.</p>
+               </div>
+            </div>
+         </article>
+         <article class="swiper-slide">
+            <div class="inner">
+               <div class="con">
+                  <img src="./img/pic4.png" alt="pic">
+                  <h2>Lorem ipsum dolor sit.</h2>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, expedita.</p>
+               </div>
+            </div>
+         </article>
+         <article class="swiper-slide">
+            <div class="inner">
+               <div class="con">
+                  <img src="./img/pic5.png" alt="pic">
+                  <h2>Lorem ipsum dolor sit.</h2>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, expedita.</p>
+               </div>
+            </div>
+         </article>
       </section>
+      <!-- 페이지네이션, 이전, 다음 버튼 -->
+      <nav class="swiper-pagination"></nav>
+      <nav class="swiper-button-prev"></nav>
+      <nav class="swiper-button-next"></nav>
    </main>
+
+   <footer>
+      2022 DCODELAB &copy; ALL RIGHTS RESERVED
+   </footer>
 
    <script>
       // 기본 스와이퍼 연결 방법
@@ -33,10 +87,23 @@
          slidesPerView: "auto", // 한 화면에 보이는 슬라이드 개수, css로 지정한 너비만큼 주고 싶으면 "auto"
          spaceBetween: 30, // 슬라이드 간 간격(px)
          centeredSlides: true, // 활성화된 슬라이드가 가운데 유지
-
+         pagination: {
+            el: ".swiper-pagination", // 페이지네이션 버튼 추가
+            // clickable: true, // 클릭 가능 여부 설정
+            type: "fraction" // 현재 페이지/전체 페이지
+         },
+         navigation: {
+            prevEl: ".swiper-button-prev",
+            nextEl: ".swiper-button-next",
+         },
+         effect: "coverflow",
+         coverflowEffect: {
+            rotate: 50, // y축 회전 각도
+            stretch: -100, // 당겨짐 정도
+            depth: 400, // 입체적인 왜곡 효과 정도
+            slideShadows: false // 슬라이드의 그림자 설정
+         }
       });
-
-      
    </script>
 </body>
 

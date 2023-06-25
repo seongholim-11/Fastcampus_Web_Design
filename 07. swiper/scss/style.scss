@@ -2,13 +2,75 @@
 @import "reset";
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@100&display=swap');
 
+h1{font: normal 24px/1 "orbitron"; color: #fff; line-height: 1px; position: absolute; top: 70px; left: 50px; z-index: 2;}
+
 main{
    width: 100%; height: 100vh; background: linear-gradient(45deg, violet, cornflowerblue);overflow: hidden; position: relative; 
 
    .swiper-wrapper{
       width: 100%; height: 100%; 
       .swiper-slide{
-         width: 500px; height: 100%; background: rgba(255, 255, 255, 0.2); font-size: 100px; display: flex; justify-content: center; align-items: center; color: white; border: 1px solid #fff;
+         width: 500px; height: 500px; border: 1px solid #fff; position: relative; top: 50%; margin-top: -250px;
+         .inner{
+            width: 100%; height: 100%; background: #fff; padding: 30px; opacity: 0.4; transition: 1s; position: relative;
+            .con{
+               position: relative; z-index: 2;
+               img{width: 100%;}
+               h2{
+                  font: normal 40px/1 "roboto"; color: #111; margin-top: 15px; margin-bottom: 20px; margin-top: 20px;
+                  &::before{
+                     content: ""; display: block; width: 30px; height: 1px; background: #888; margin-bottom: 10px; transition: 1s;
+                  }
+               }
+               p{font: 14px/1.3 "arial"; color: #777;}
+            }
+            &::before, &::after{
+               content: ""; display: block; width: 100%; height: 100%; position: absolute; top: 0px; left: 0px; background: #fff; opacity: 0; z-index: 1;
+            }
+            @keyframes ani {
+               0%{opacity: 0; transform: scale(1);}
+               1%{opacity: 0.5;}
+               100%{opacity: 0; transform: scale(1.4);}
+            }
+         }
+      }
+      
+      .swiper-slide-active{
+         .inner{
+            opacity: 1;
+            box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.8);
+            &::before{animation: ani 1s ease 0s 1;}
+            &::after{animation: ani 1s ease 0.3s 1;}
+         }
+      }
+      .swiper-slide-prev, .swiper-slide-next{
+         .inner{
+            opacity: 0.7;
+         }
+      }
+
+   }
+
+   // 이미 bottom 등이 설정되어 있어 top 등이 먹히지 않을 때는 auto로 초기화
+   .swiper-pagination-fraction{
+      bottom: auto; top: 70px; right: 100px; width: auto; left: auto; font-family: "orbitron"; color: #fff; font-size: 20px; letter-spacing: 1px;
+      span{opacity: 0.6;}
+      .swiper-pagination-current{
+         font-size: 30px; opacity: 1;
       }
    }
+
+   // 이미지를 흰색으로 만드는 방법
+   .swiper-button-prev, .swiper-button-next{
+      top: auto; bottom: 10vh; left: auto; transform: scale(0.7); filter: saturate(0) brightness(4); transition: 0.5s; opacity: 0.7;
+      &:hover{transform: scale(1); opacity: 1;}
+   }
+   .swiper-button-prev{
+      right: 150px; 
+   }
+   .swiper-button-next{
+      right: 100px;
+   }
 }
+
+footer{font: 12px/1 "arial"; color: #fff; opacity: 0.5; letter-spacing: 2px; position: absolute; bottom: 5vh; left: 50%; transform: translateX(-50%);}
