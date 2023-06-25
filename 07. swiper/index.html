@@ -7,13 +7,37 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>swiper</title>
    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-   <link rel="stylesheet" href="scss/style.css">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+   <link rel="stylesheet" href="scss/style.css">
 </head>
 
 <body>
+   <main>
+      <section class="swiper-wrapper">
+         <article class="swiper-slide">1</article>
+         <article class="swiper-slide">2</article>
+         <article class="swiper-slide">3</article>
+         <article class="swiper-slide">4</article>
+         <article class="swiper-slide">5</article>
+      </section>
+   </main>
 
+   <script>
+      // 기본 스와이퍼 연결 방법
+      const swiper = new Swiper("main", {
+         speed: 500, // 스와이프 시 패널이 넘어가는 속도
+         loop: true, // 스와이프를 순환해주는 기능
+         direction: "horizontal", // 스와이프가 넘어가는 방향 지정(horizontal: 가로, vertical: 세로)
+         grabCursor: true, // 커서 변경
+         slidesPerView: "auto", // 한 화면에 보이는 슬라이드 개수, css로 지정한 너비만큼 주고 싶으면 "auto"
+         spaceBetween: 30, // 슬라이드 간 간격(px)
+         centeredSlides: true, // 활성화된 슬라이드가 가운데 유지
+
+      });
+
+      
+   </script>
 </body>
 
 </html>
