@@ -123,4 +123,236 @@
     자료형 검사
 
     typeof 변수명
+
+    -----------------------------------------
+
+    반복문
+
+    const colors = ["red", "green", "blue"]
+    for(let i = 0; i < colors.length; i++){
+        console.log(colors[i])
+    }
+
+    const classA = [
+        {
+            name: "Andy",
+            age: 20,
+            address: "seoul"
+        },
+        {
+            name: "Emma",
+            age: 30,
+            address: "seoul"
+        }
+    ]
+        for(let num = 0; num < classA.length; num++){
+            console.log(classA[num].name)
+        }
+    
+    -----------------------------------------
+
+    for of 반복문
+    const colors = ["red", "green", "blue"]
+
+    for(let color of colors){
+        console.log(color);
+    }
+
+    -----------------------------------------
+
+    for in 반복문
+
+    const student1 = {
+        name: "david",
+        age: 20,
+        hobby: "sport"
+    }
+
+    for(let key in student1){
+        console.log(student1); // name age hobby
+        console.log(student1[key]); // david 20 sport
+    }
+
+    -----------------------------------------
+
+    while
+
+    const cars = ["BMW", "VOLVO", "HYUNDAI"]
+
+    for(let i = 0; i < cars.length; i++){
+        console.log(cars[i])
+    }
+
+    let i = 0;
+    while(cars[i]){
+        console.log(cars[i]);
+        i++
+    }
+
+    while문을 사용하기 보다는 for문을 사용하는 것이 더 효울적이기 때문에 사용 빈도가 적다
+
+    -----------------------------------------
+
+    이터러블 객체
+
+    const txt = "HELLO"
+
+    for(let letter of txt){
+        console.log(letter); H,E,L,L,O
+    }
+
+    -----------------------------------------
+
+    함수(function)
+    -- 자주쓰는 실행코드들을 블록단위로 묶어서 패키징 해놓은 형태
+    -- 자주쓰는 코드들을 기능단위로 재사용하기 위함
+    -- 함수정의: 미리 function 키워드를 이용해서 자주 쓸 코드들을 묶어서 정의하는 행위
+    -- 함수호출: 정의되어 있는 함수를 호출해야 지만 비로서 기능이 실행됨
+
+    함수의 종류
+    선언적함수
+    -- 함수에 미리 이름을 붙여서 정의해놓은 형태
+    -- 자바스크립트 파일을 읽을 때 선언적함수를 우선적으로 읽어줌
+    -- 선언적 함수는 호출위치가 자유로움(호이스팅)
+
+    function plus(){
+        const num1 = 2;
+        const num2 = 3;
+        console.log(num1+num2);
+    }
+
+    plus();
+    
+    익명함수
+    -- 함수에 이름이 없이 정의하는 형태
+    -- 익명함수 자체만으로는 호출이 불가능
+    -- 변수에 익명함수를 대입하거나 (대입형) 특정 이벤트 객체에 대입하는 식으로 호출가능
+    -- 호이스팅 안됨
+
+    const minus = function(){
+        const num1 = 2;
+        const num2 = 3;
+        console.log(num1-num2);
+    }
+
+    minus();
+
+    대입형함수
+    -- 변수에 익명함수가 대입된 형태
+    
+    즉시실행함수
+    -- 함수가 자기자신을 정의하자마자 바로 자신을 호출
+    -- 즉시실행함수를 쓰는 이유: 즉시 실행 함수 안쪽의 값들을 캡슐화
+
+    (function(){
+        const num1 = 2;
+        const num2 = 3;
+        console.log(num1+num2);
+    })()
+
+    -----------------------------------------
+
+    함수 매개변수 (parameter)
+    - 함수외부에서 함수 내부로 특정값을 전달하기 위한 통로 이름
+
+    인수 (argument)
+    - 함수를 호출 때 파라미터를 통해 전달되는 값
+
+    반환값 (return)
+    - 함수 내부에서 만들어진 값을 함수 호출 시 외부로 반환
+    - 함수 구문 실행도중 특정시점에서 강제로 코드를 실행 중단 될 때
+
+    function plus(num1. num2){
+        const = num1 + num2;
+        return const;
+
+    }
+
+    plus(2, 3);
+
+    const total = plus(2, 3); // return 전: undefinded, return 후: 5
+
+    -----------------------------------------
+
+    화살표 함수
+    -- 기존의 익명함수를 좀 더 쓰기 편하게 축약한 형태
+    -- 내부로 전달되는 파라미터가 하나면 괄호는 생략 가능
+    -- 코드블록안에서 실행되는 코드가 한 줄이면 코드 블록 괄호도 생략 가능
+
+    const plus = (num1, num2) => {
+        const = num1 + num2;
+        return const;
+    } 
+
+    const plus = num1 => console.log(num1);
+
+    -----------------------------------------
+
+    조건문 (if문)
+    -- 특정 조건을 걸어서 해당 조건의 참, 거짓 유무에 따라 코드의 분기를 생성
+
+    if(조건식1){
+        조건식1이 참이면 해당코드 블록을 실행,
+        거짓이면 해당 코드 블록을 무시하고 다음 조건식으로 넘어감
+    }
+    else if(조건식2){
+        조건식2이 참이면 해당코드 블록을 실행,
+        거짓이면 해당 코드 블록을 무시하고 다음 조건식으로 넘어감
+    }
+    else{
+        위에 모든 조건식이 거짓이면 이곳의 코드를 실행하고 종료
+    }
+
+    function plus(num1, num2){
+        if(num1 === undefined || num2 === undefined){
+            console.error("두개의 인수값을 모두 넣어주세요")
+        }
+        if(typeof num1 !== "number" || typeof num2 !== "number"){
+            console.error("두개의 인수값을 모두 숫자로 넣어주세요")
+        }
+
+        const result = num1 + num2;
+        console.log(result);
+
+    }
+
+    -----------------------------------------
+
+    조건문 switch: 여러개의 코드블록중에서 하나를 선택해야 될 때 사용
+
+    switch(표현식){
+        case A:
+            //실행할 코드 블록
+            break;
+        case B:
+            //실행할 코드 블록
+            break;
+        default:
+            //실행할 코드 블록
+    }
+
+    switch(new Date().getDay()){
+        case 0:
+            console.log("일요일입니다.")
+            break;
+        case 1:
+            console.log("월요일입니다.")
+            break;
+        case 2:
+            console.log("회요일입니다.")
+            break;
+        case 3:
+            console.log("수요일입니다.")
+            break;
+        case 4:
+            console.log("목요일입니다.")
+            break;
+        case 5:
+            console.log("금요일입니다.")
+            break;
+        case 6:
+            console.log("토요일입니다.")
+            break;
+
+    }
  -->
