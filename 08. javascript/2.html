@@ -1,16 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>TITLE</h1>
+<!--     Event: 무언가 일어나는 행위, 액션
+    사용자가 발생시키는 이벤트
+    (click, mouseover, mousemove, mousewheel, scroll)
+    시스템이 발생시키는 이벤트
+    (load, error, success)
+
+    이벤트 연결방법
+    DOM.onclick = () => {}
+    DOM.addEventListener('이벤트명', ()=>{})
+
+    console.dir() // dom의 구조 확인
+
+    메소드 : 특정 객체에 종속되어 있는 함수 -->
+
+    <a href="#">link</a>
 
     <script>
-        console.log("javascript")
+        const a = document.querySelector('a')
+
+        a.onclick = () => {
+            alert("You clicked")
+        }
+
+        // 이전 것이 덮어쓰기 됨
+        a.onclick = () => {
+            alert("You clicked again")
+        }
+
+        a.addEventListener('click', () => {
+            alert("You clicked")
+        })
+
+        // 덮어써지지않고 추가됨
+        a.addEventListener('click', () => {
+            alert("You clicked again")
+        })
     </script>
 </body>
+
 </html>

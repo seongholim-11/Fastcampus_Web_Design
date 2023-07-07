@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <a href="https://www.naver.com">123</a>
+
+    <div class="box" style="width: 100px; height: 100px; background: aqua;"></div>
+
+    <script>
+        /* 
+            이벤트 발생 시 연결된 인수로 전달되는 이벤트 객체
+        */
+        const a = document.querySelector("a")
+        const box = document.querySelector(".box")
+
+        // 스크립트가 실행되기 전에 a 태그의 링크가 실행
+        a.addEventListener("click", (event) => {
+            // 기본 기능 제한
+            event.preventDefault();
+            alert("You clicked!~!")
+        })
+
+        box.addEventListener("mousemove", (event) => {
+            // 전체 브라우저
+            console.log(`현재 마우스 x축 위치: ${event.pageX}`)
+            // 해당 요소
+            console.log(`현재 마우스 offset: ${event.offsetX}`)
+        })
+
+        window.addEventListener("mousewheel", e=>{
+            console.log(e.deltaY);
+
+            if(e.deltaY > 0){console.log("wheel down")}
+            if(e.deltaY < 0){console.log("wheel up")}
+        })
+    </script>
+
+</body>
+
+</html>
