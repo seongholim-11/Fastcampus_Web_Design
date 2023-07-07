@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px; height: 300px; background-color: aqua; margin: 100px;
+        }
+        .box2{
+            width: 300px; height: 300px; background-color: rgb(255, 0, 128); margin: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box"></div>
+    <div class="box2"></div>
+
+    <script>
+        const box = document.querySelector('.box')
+        const box2 = document.querySelector('.box2')
+
+        box.addEventListener("click", (e)=>{
+            e.currentTarget.style.backgroundColor = 'hotpink';
+            e.currentTarget.style.width = 200 + "px";
+        })
+
+        box2.addEventListener("click", (e)=>{
+            // 퍼센트값이어도 px값으로 출력
+            console.log(getComputedStyle(e.currentTarget).width)
+            console.log(getComputedStyle(e.currentTarget)["background-color"])
+        })
+    </script>
+
+</body>
+
+</html>
