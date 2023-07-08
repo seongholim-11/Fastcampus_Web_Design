@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{height: 5000px;}
+    </style>
+</head>
+<body>
+    <script>
+        /* 
+            .innerWidth: 브라우저 안쪽의 너비값
+            .innerHeight: 브라우저 안쪽 높이값
+            .outerWidth: 브라우저 프레임을 포함한 너비값
+            .outerHeight: 브라우저 프레임을 포함한 높이값
+            .scrollY: 현재 스크롤된 브라우저의 Y축 거리값
+            .scrollX: 현재 스크롤된 브라우저의 X축 거리값
+        */
+
+        // 브라우저가 리사이즈될 때마다
+        window.addEventListener("scroll", () => {
+            // console.log(window.innerWidth)
+            // console.log(window.innerHeight)
+            console.log(window.scrollY)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        const version = navigator.userAgent;
+        console.log("🚀 ~ file: 11. navigator.html:13 ~ version:", version)
+
+        const isWhale = /whale/i.test(version)
+        const isEdg = /edg/i.test(version)
+        const isTrident = /trident/i.test(version)
+        const mobile = /mobile/i.test(version)
+
+        if(isWhale){
+            console.log("Whale 브라우저로 접속했습니다.")
+            document.querySelector('body').style.backgroundColor = 'blue'
+        }
+        if(isEdg){
+            console.log("edg 브라우저로 접속했습니다.")
+            document.querySelector('body').style.backgroundColor = 'yellowgreen'
+        }
+        if(isTrident){
+            console.log("IE 브라우저로 접속했습니다.")
+            document.querySelector('body').style.backgroundColor = 'orange'
+        }
+        if(!isWhale && !isEdg && !isTrident){
+            console.log("Chrome 브라우저로 접속했습니다.")
+            document.querySelector('body').style.backgroundColor = 'lightgreen'
+        }
+    </script>
+</body>
+</html>
