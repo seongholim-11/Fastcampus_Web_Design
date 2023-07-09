@@ -2,5 +2,11 @@
 @import "reset";
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
+$web: 1199px;
+$tabletBig: 899px;
+$tabletMiddle: 799px;
+$tabletSmall: 699px;
+$mobile: 469px;
+
 @import "header";
 @import "content";
