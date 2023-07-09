@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 * {
   margin: 0;
@@ -30,6 +31,11 @@ body {
   overflow: hidden;
   position: relative;
   perspective: 1300px;
+  /* 
+      transform: rotateY(360도 / 8) : 원통형 모양 만들기
+      부모요소에 po
+
+  */
 }
 .wrap > video {
   width: 100%;
