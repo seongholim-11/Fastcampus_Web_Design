@@ -8,6 +8,11 @@ body{background: #000; font: 17px/1.4 "orbitron"; letter-spacing: 1px; color: #d
 .wrap{width: 100%; height: 100vh; overflow: hidden;position: relative;  perspective: 1300px; 
     > video{width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0px; left: 0px; opacity: 0.5;}
     
+    /* 
+        transform: rotateY(360도 / 8) : 원통형 모양 만들기
+        부모요소에 po
+
+    */
     // 지름 * 3.14 = 원의 둘레
     // 원의 둘레 / 3.14 = 지름
     // 600 * 8 = 4800 , 반지름 = 2400
