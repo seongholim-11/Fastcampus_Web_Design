@@ -1,10 +1,13 @@
 ﻿/* 
     main.className = ''; // 클래스 초기화
+    forEach, forOf
+
 */
 
 const main = document.querySelector('main')
 const menus = document.querySelectorAll('nav span')
 const numbers = document.querySelectorAll('.screen span');
+// 비구조할당
 const [am, pm] = document.querySelectorAll('.screen em');
 
 setInterval(()=>{
