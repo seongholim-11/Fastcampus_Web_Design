@@ -5,7 +5,64 @@ section{
         width: 100%; height: 100%; position: absolute; top: 0; left: 0;
 
         .inner{
-            width: 100%; height: 100%; background-color: #fff; padding: 5vh 2.5vw 8vh; border-radius: 10px; box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1); opacity: 0.6; transform: scale(0.8); transition: 1s;
+            // align-items과 align-content 차이점
+            width: 100%; height: 100%; background-color: #fff; padding: 5vh 2.5vw 8vh; border-radius: 10px; box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1); opacity: 0.6; transform: scale(0.8); transition: 1s; display: flex; justify-content: center; flex-wrap: wrap; align-content: space-between;
+            .pic{
+                width: 15vw; height: 15vw; position: relative; background-repeat: no-repeat; background-position: -99999px -999999px; display: flex; justify-content: center; align-items: center;
+
+                // 이미지 그림자 효과 내는 방법
+                &::before, &::after{
+                    content: ""; display: block; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border-radius: 50%; background-repeat: no-repeat; background-position: center; background-size: cover; background-image: inherit;
+                }
+                &::before{
+                    transform: translateY(10%); filter: blur(20px) brightness(160%);
+                }
+
+                .dot{
+                    width: 3vw; height: 3vw; border-radius: 50%; background: #fff; position: relative; z-index: 3; box-shadow:  inset 5px 5px 10px rgba(0, 0, 0, 0.3);
+                }
+
+                &.on{
+                    &::before{
+                        animation: rotation2 4s linear infinite;
+                    }
+                    &::after{
+                        animation: rotation 4s linear infinite;
+                    }
+                }
+            }
+
+            .txt{
+                width: 100%; text-align: center;
+
+                h2{
+                    font: bold 20px/1 'arial'; color: #222; margin-bottom: 2vh;
+                }
+
+                p{
+                    font: 14px/1.2 'arial'; color: #777; margin-bottom: 3vh;
+                }
+
+                ul{
+                    display: flex; justify-content: space-around;
+
+                    li{
+                        cursor: pointer; opacity: 0.6; transition: 0.5s;
+
+                        &.play{
+                            transform: scale(1.5); opacity: 0.9;
+                        }
+
+                        &:hover{
+                            transform: scale(1.5); opacity: 0.8;
+
+                            &.play{
+                                transform: scale(2); opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         &.on{
@@ -14,4 +71,15 @@ section{
             }
         }
     }
+}
+
+@keyframes rotation {
+    0%{transform:  rotate(0deg);}
+    100%{transform:  rotate(360deg);}
+}
+
+// 100%{transform:  rotate(360deg);} 이렇게만 주게 되면 기존에 줬던 translateY(10%)이 없어짐
+@keyframes rotation2 {
+    0%{transform: translateY(10%) rotate(0deg);}
+    100%{transform: translateY(10%)  rotate(360deg);}
 }
