@@ -1,3 +1,54 @@
 @charset "UTF-8";
 @import "reset";
 
+figure {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(25deg, violet, pink);
+
+    // 인라인 요소의 미세한 간격을 없애려면 부모요소인 블록요소에 font-size: 0을 주면 됨
+    h1 {
+        position: absolute;
+        top: 7vh;
+        left: 4vw;
+        font-size: 0;
+
+        strong {
+            font: bold 36px/1.4 "arial";
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        span {
+            font: 12px/1 "arial";
+            opacity: 0.8;
+            letter-spacing: 1px;
+        }
+    }
+    a i {
+        color: black;
+    }
+
+    .menu {
+        position: absolute;
+        top: 8vh;
+        right: 4vw;
+        font-size: 14px;
+        color: #fff;
+    }
+
+    @import "panel";
+    @import "btns";
+
+    > p {
+        position: absolute;
+        bottom: 7vh;
+        left: 50%;
+        transform: translateX(-50%);
+        font: 12px/1 "aria;";
+        color: #fff;
+        letter-spacing: 2px;
+        opacity: 0.8;
+    }
+}
