@@ -34,12 +34,6 @@ body {
     0 4px 0 rgb(90, 121, 29),    
     0 4px 4px rgba(0,0,0,.2);
 }
-.btn.loading .text {
-  
-}
-.btn.loading .loader {
-  
-}
 
 @keyframes spinner {
   0% {transform: rotate(0deg);}
