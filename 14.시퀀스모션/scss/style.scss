@@ -1,7 +1,9 @@
 @charset 'UTF-8';
-@import 'reset';
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
 
-body {
-    background: #000;
-}
+
+@import 'reset';
+@import 'header';
+@import 'show';
+@import 'sns';
