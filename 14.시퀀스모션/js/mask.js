@@ -1,5 +1,9 @@
-const section = document.querySelector('section')
+const wrap = document.querySelector("main");
+const btns = document.querySelectorAll("#navi li");
 
-section.addEventListener('click', e => {
-    e.currentTarget.classList.add('on')
+btns.forEach((btn, index)=>{
+    btn.addEventListener('click', e=>{
+        for(let button of btns) button.classList.remove('on')
+        btns[index].classList.add('on')
+    })
 })

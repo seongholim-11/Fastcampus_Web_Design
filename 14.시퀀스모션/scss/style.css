@@ -69,6 +69,16 @@ header #navi li h2 {
   letter-spacing: 1px;
   margin-bottom: 5px;
 }
+header #navi li h2::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 1px;
+  background-color: #fff;
+  margin-top: 7px;
+  margin-bottom: 3px;
+  transition: 1.4s;
+}
 header #navi li p {
   font: 10px/1 "arial";
   color: #fff;
@@ -79,6 +89,38 @@ header #navi li.on {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
   transform: scale(1.3);
   opacity: 1;
+}
+header #navi li.on h2::after {
+  width: 150px;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+section article {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+}
+section article video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: rotateY(180deg);
+}
+section article.on {
+  z-index: 3;
+}
+section article.lower {
+  z-index: 2;
 }
 
 /* section{
