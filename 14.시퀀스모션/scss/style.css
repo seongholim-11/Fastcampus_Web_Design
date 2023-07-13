@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #111;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+section article {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: bold 100px/1 "arial";
+  color: #fff;
+}
+section article.lower {
+  background-color: pink;
+}
+section article.upper {
+  background: aqua;
+  -webkit-mask: url(../src/mask1.png);
+  -webkit-mask-size: 2300% 100%;
+  -webkit-mask-position: 0% 0%;
+}
+section.on .upper {
+  animation: mask-play 1.4s steps(22) forwards;
+}
+
+@keyframes mask-play {
+  0% {
+    -webkit-mask-position: 0% 0%;
+  }
+  100% {
+    -webkit-mask-position: 100% 0%;
+  }
+}/*# sourceMappingURL=style.css.map */
