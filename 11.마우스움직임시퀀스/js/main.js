@@ -14,11 +14,15 @@ const main = document.querySelector("main");
 const loading = document.querySelector("aside");
 const logo = document.querySelector("p img");
 
+
 for (let i = 0; i < 200; i++) {
   const imgNode = document.createElement("img");
   imgNode.setAttribute("src", `./img/pic${i}.jpg`);
   main.append(imgNode);
 }
+
+const imgs = document.querySelectorAll("main img");
+console.log("🚀 ~ file: main.js:17 ~ imgs:", imgs)
 
 imgLoaded();
 
@@ -31,7 +35,6 @@ for(let i=0; i<200; i++){
 main.innerHTML = tags; */
 
 function imgLoaded() {
-  const imgs = document.querySelectorAll("img");
   const len = imgs.length;
   let total = 0;
   let percent = 0;
@@ -74,7 +77,6 @@ window.addEventListener("mousemove", (e) => {
   let wid = window.innerWidth;
   let percent = parseInt((x / wid) * 200);
   console.log("🚀 ~ file: main.js:69 ~ percent:", percent);
-  const imgs = document.querySelectorAll("main img");
 
   for (let img of imgs) {
     img.style.display = "none";
